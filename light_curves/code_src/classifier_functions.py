@@ -347,7 +347,7 @@ def uniform_length_spacing(df_lc, final_freq_interpol, include_plot=True):
         # get these values into the dataframe
         # append the results as a dict. the list will be converted to a dataframe later.
         lc_interpol.append(
-            {"objectid": oid, "label": str(singleband_oid.label.unique().squeeze()), "band": band, "time": x_interpol.reshape(-1),
+            {"objectid": oid, "label": str(singleband_oid.label.unique().to_numpy().squeeze()), "band": band, "time": x_interpol.reshape(-1),
              "flux": mean_prediction, "err": err}
         )
 
